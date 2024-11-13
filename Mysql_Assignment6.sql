@@ -15,14 +15,16 @@ UPDATE persons1 SET Country_Id='1' WHERE Id = 7;
 
 
 -- (1)Perform inner join, Left join, and Right join on the tables. 
-Select C.Id,C.Country_name,P.Fname,P.Rating
+Select P.Id AS PersonID,P.Fname,C.Id AS CountryId,C.Country_name
 from persons1 as P INNER JOIN country1 as C on P.Country_Id=C.Id;
 
-Select C.Id,C.Country_name,P.Fname,P.Rating
+Select P.Id AS PersonID,P.Fname,C.Id AS CountryId,C.Country_name
 from persons1 as P LEFT JOIN country1 as C on P.Country_Id=C.Id;
 
-Select C.Id,C.Country_name,P.Fname,P.Rating
+Select P.Id AS PersonID,P.Fname,C.Id AS CountryId,C.Country_name
 from persons1 as P RIGHT JOIN country1 as C on P.Country_Id=C.Id;
+
+
 
 -- (2)List all distinct country names from both the Country and Persons tables. 
 SELECT DISTINCT Country_name FROM country1
